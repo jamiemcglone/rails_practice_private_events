@@ -1,0 +1,12 @@
+<h2>User Page</h2>
+<h3><%= @user.name %></h3>
+<ul>
+<% if @user.events.empty? %>
+  <p>User is not hosting</p>
+<% else %>
+  <h4><%= @user.name %>'s Events</h4>
+  <% @user.events.each do |event| %>
+    <li><%=link_to event.title, event_path(event) %></li>
+  <% end %>
+<% end %>
+</ul>

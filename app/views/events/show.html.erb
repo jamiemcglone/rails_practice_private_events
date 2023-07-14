@@ -1,0 +1,12 @@
+<h2>Event Details</h2>
+<h3><%= @event.title %></h3>
+<ul>
+<% if @user.enrollments.empty? %>
+  <p>Nobody be attending this thing</p>
+<% else %>
+  <h4><%= @user.name %>'s Events</h4>
+  <% @user.enrollments.each do |person| %>
+    <li><%= person.name %></li>
+  <% end %>
+<% end %>
+</ul>
